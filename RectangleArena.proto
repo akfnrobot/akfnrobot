@@ -22,7 +22,7 @@ PROTO RectangleArena [
   field SFNode     wallAppearance  BrushedAluminium {}             # Defines the appearance of the wall.
 
   # Deprecated in R2019a
-  hiddenField MFString   floorTextureUrl "/home/dongjun/tennis court.jpg"
+  hiddenField MFString   floorTextureUrl "https://github.com/akfnrobot/akfnrobot/tennis court.jpg"
   hiddenField MFString   wallTextureUrl  "webots://projects/default/worlds/textures/metal.jpg"
   # Deprecated in R2019a-rev2
   hiddenField SFColor    wallColor 0.8 0.8 0.8
