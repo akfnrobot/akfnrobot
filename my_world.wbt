@@ -1,0 +1,526 @@
+#VRML_SIM R2022b utf8
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+WorldInfo {
+  basicTimeStep 16
+}
+
+Viewpoint {
+  orientation -0.33185733874619844 -0.09874274160469809 0.9381474178937331 3.686018050088086
+  position 1.700313773507203 1.0549607538959629 1.4846240848267684
+  follow "my_robot"
+}
+
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+floorSize 23.7 10.9
+translation 0 0 0.02
+wallHeight 0.5
+}
+
+# 테니스 코트 TENNIS_COURT
+DEF COURT Solid {
+  translation 0 0 0
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0.8 0  # 초록색
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 23.77 10.973 0.05  # 테니스 코트 크기
+      }
+      # 물리 속성 추가
+      boundingObject Box {
+        size 23.77 10.973 0.05
+      }
+      physics Physics {
+        density -1
+      }
+    }
+  ]
+  }
+# 바깥쪽 벽1
+Transform {
+  translation 0 5.5365 0.15  # 코트 바닥보다 약간 위에 위치
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 0  # 흰색
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 23.77 0.1 0.4 
+      }
+    }
+  ]
+}
+# 바깥쪽 벽2
+Transform {
+  translation 0 -5.5365 0.15  # 코트 바닥보다 약간 위에 위치
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 0  # 흰색
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 23.77 0.1 0.4 
+      }
+    }
+  ]
+}
+# 바깥쪽 벽3
+Transform {
+  translation -11.935 0 0.15  # 코트 바닥보다 약간 위에 위치
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 0  # 흰색
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.1 11.173 0.4 
+      }
+    }
+  ]
+}
+# 바깥쪽 벽4
+Transform {
+  translation 11.935 0 0.15  # 코트 바닥보다 약간 위에 위치
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 0  # 흰색
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.1 11.173 0.4 
+      }
+    }
+  ]
+}
+# 바깥쪽 가로 라인1
+Transform {
+  translation 0 4.9865 0.026  # 코트 바닥보다 약간 위에 위치
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 1 1  # 흰색
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 22.77 0.1 0.01  
+      }
+    }
+  ]
+}
+# 바깥쪽 가로 라인2
+Transform {
+  translation 0 -4.9865 0.026  # 코트 바닥보다 약간 위에 위치
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 1 1  # 흰색
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 22.77 0.1 0.01  
+      }
+    }
+  ]
+}
+# 바깥쪽 세로 라인1
+Transform {
+  translation 11.435 0 0.026  # 코트 바닥보다 약간 위에 위치
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 1 1  # 흰색
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.1 10.023 0.01  
+      }
+    }
+  ]
+}
+# 바깥쪽 세로 라인2
+Transform {
+  translation -11.435 0 0.026  # 코트 바닥보다 약간 위에 위치
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 1 1  # 흰색
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.1 10.023 0.01  
+      }
+    }
+  ]
+}
+# 안쪽 가로 라인1
+Transform {
+  translation 0 3.63 0.026  # 코트 바닥보다 약간 위에 위치
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 1 1  # 흰색
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 22.77 0.1 0.01  
+      }
+    }
+  ]
+}
+# 안쪽 가로 라인2
+Transform {
+  translation 0 -3.63 0.026  # 코트 바닥보다 약간 위에 위치
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 1 1  # 흰색
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 22.77 0.1 0.01  
+      }
+    }
+  ]
+}
+# 안쪽 세로 라인1
+Transform {
+  translation 6.4 0 0.026  # 코트 바닥보다 약간 위에 위치
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 1 1  # 흰색
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.1 7.26 0.01  
+      }
+    }
+  ]
+}
+# 안쪽 세로 라인2
+Transform {
+  translation -6.4 0 0.026  # 코트 바닥보다 약간 위에 위치
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 1 1  # 흰색
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.1 7.26 0.01  
+      }
+    }
+  ]
+}
+# 중앙 가로 라인
+Transform {
+  translation 0 0 0.026  # 코트 바닥보다 약간 위에 위치
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 1 1  # 흰색
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 12.8 0.1 0.01  
+      }
+    }
+  ]
+}
+# 테니스 네트
+Transform {
+  translation 0 0 0.5
+  children [
+    Shape {
+        appearance PBRAppearance {
+        baseColor 1 1 1  # 회색
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.05 10.2 1  # 테니스 네트 크기
+      }
+    }
+  ]
+}
+Robot {
+  translation 10 0 0.1  # 로봇의 초기 위치 설정
+  children [
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor 0 0 0.07  # 조인트 앵커 설정
+      }
+      device [
+        RotationalMotor {
+          name "left wheel motor"
+        }
+      ]
+      endPoint Solid {
+        translation 0 0.135 0.07  # 바퀴 위치 설정
+        children [
+          DEF WHEEL Transform {
+            rotation 1 0 0 1.5708
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 1 0 0
+                  roughness 1
+                  metalness 0
+                }
+                geometry Cylinder {
+                  height 0.03
+                  radius 0.075
+                }
+              }
+            ]
+          }
+        ]
+        name "left wheel"
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor 0 0 0.07
+      }
+      device [
+        RotationalMotor {
+          name "right wheel motor"
+        }
+      ]
+      endPoint Solid {
+        translation 0 -0.135 0.07  # 바퀴 위치 설정
+        children [
+          USE WHEEL
+        ]
+        name "right wheel"
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+    #로봇 몸체
+    Transform {
+      translation 0 0 0.18
+      children [
+        Solid {
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0 0 1
+                roughness 1
+                metalness 0
+              }
+              geometry DEF BODY Box {
+                size 0.23 0.23 0.15
+              }
+            }
+          ]
+          name "body"
+          boundingObject Box {
+            size 0.23 0.23 0.15
+          }
+          physics Physics {
+          }
+        }
+      ]
+    }
+    #뚜껑 장식
+    Transform{
+      translation 0 0 0.27
+      children [
+        Shape {
+          appearance PBRAppearance {
+                baseColor 1 1 0
+                roughness 1
+                metalness 0
+              }
+              geometry Cylinder{
+                height 0.06
+                radius 0.038
+              }
+        }
+      ]
+    }
+    # 플로우 장치1 위치 설정
+    Transform {
+      translation 0.05 0.12 0.07  
+      children [
+        Solid {
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 1 1 1
+                roughness 1
+                metalness 0
+              }
+              geometry Box {
+                size 0.28 0.01 0.1  # 플로우 장치 크기 설정
+              }
+            }
+          ]
+          name "plow1"
+          boundingObject Box {
+            size 0.28 0.01 0.1
+          }
+          physics Physics {
+          }
+        }
+      ]
+    }
+    # 플로우 장치2 위치 설정
+    Transform {
+      translation 0.05 -0.12 0.07  
+      children [
+        Solid {
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 1 1 1
+                roughness 1
+                metalness 0
+              }
+              geometry Box {
+                size 0.28 0.01 0.1  # 플로우 장치 크기 설정
+              }
+            }
+          ]
+          name "plow2"
+          boundingObject Box {
+            size 0.28 0.01 0.1
+          }
+          physics Physics {
+          }
+        }
+      ]
+    }
+    # 배터리 부분 몸통 맨뒤
+    Transform {
+      translation -0.12 0 0.07  
+      children [
+        Solid {
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.1 0.1 0.1
+                roughness 1
+                metalness 0
+              }
+              geometry Box {
+                size 0.1 0.25 0.1  
+              }
+            }
+            
+          ]
+          name "battery"
+          boundingObject Box {
+            size 0.065 0.25 0.15
+          }
+          physics Physics {
+          }
+        }
+      ]
+    }
+    DistanceSensor {
+      translation 0.126 0.06 0.21
+      rotation 0 0 1 0
+      children [
+        Transform {
+          rotation 0 1 0 1.5708
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 1 1 0
+                roughness 1
+                metalness 0
+              }
+              geometry Cylinder {
+                height 0.015
+                radius 0.02
+              }
+            }
+          ]
+        }
+      ]
+      name "ds0"
+      lookupTable [
+        0 1020 0
+        0.15 1020 0
+        0.45 0 0
+      ]
+      numberOfRays 2
+      aperture 1
+    }
+    DistanceSensor {
+      translation 0.126 -0.06 0.2
+      rotation 0 0 1 0
+      children [
+        Transform {
+          rotation 0 1 0 1.5708
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 1 1 0
+                roughness 1
+                metalness 0
+              }
+              geometry Cylinder {
+                height 0.015
+                radius 0.02
+              }
+            }
+          ]
+        }
+      ]
+      name "ds1"
+      lookupTable [
+        0 1020 0
+        0.15 1020 0
+        0.45 0 0
+      ]
+      numberOfRays 2
+      aperture 1
+    }
+  ]
+  #Transform {
+  #  translation -0.1 0 0
+  #boundingObject Box {  # 충돌 경계 설정
+  #  size 0.0001 0.2 0.0001
+  #}
+  #}
+  physics Physics {
+  }
+  controller "<extern>"
+  name "my_robot"
+}
+
